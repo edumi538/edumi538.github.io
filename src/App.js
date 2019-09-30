@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import icon from './icon.png';
 import './App.css';
+import { askForPermissionToReceiveNotifications } from './push-notification';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <header className="App-header">
+      <img src={icon} className="App-logo" alt="icon" />
+      <h1 className="App-title">Welcome to the push-notification demo !</h1>
+    </header>
+    <button onClick={askForPermissionToReceiveNotifications} >
+      Click here to receive notifications
+    </button>
+  </div>
+);
 
 export default App;
